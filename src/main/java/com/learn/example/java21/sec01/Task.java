@@ -9,9 +9,9 @@ public class Task {
     public static final Logger log= LoggerFactory.getLogger(Task.class);
     public static void ioIntensive(int i){
         try {
-            log.info("Starting I/O:{}",i);
+            log.info("Starting I/O:{}. Thread info:{}",i,Thread.currentThread());
             Thread.sleep(Duration.ofSeconds(10));
-            log.info("Ending I/O:{}",i);
+            log.info("Ending I/O:{}. Thread info:{}",i,Thread.currentThread().getName());
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
